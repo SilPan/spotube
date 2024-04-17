@@ -111,9 +111,6 @@ dependencies:
   very_good_infinite_list: ^0.7.1
   gap: ^3.0.1
   sliver_tools: ^0.2.12
-  dart_discord_rpc:
-    git:
-      url: https://github.com/Tommypop2/dart_discord_rpc.git
   html_unescape: ^2.0.0
   wikipedia_api: ^0.1.0
   skeletonizer: ^0.8.0

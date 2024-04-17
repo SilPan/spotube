@@ -20,7 +20,6 @@ extension ProxyPlaylistListeners on ProxyPlaylistNotifier {
       );
 
       notificationService.addTrack(state.activeTrack!);
-      discord.updatePresence(state.activeTrack!);
       updatePalette();
     });
   }

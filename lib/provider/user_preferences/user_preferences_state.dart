@@ -89,7 +89,6 @@ class UserPreferences with _$UserPreferences {
     @Default(AudioSource.youtube) AudioSource audioSource,
     @Default(SourceCodecs.weba) SourceCodecs streamMusicCodec,
     @Default(SourceCodecs.m4a) SourceCodecs downloadMusicCodec,
-    @Default(true) bool discordPresence,
     @Default(true) bool endlessPlayback,
     @Default(false) bool enableConnect,
   }) = _UserPreferences;

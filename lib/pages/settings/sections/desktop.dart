@@ -53,13 +53,6 @@ class SettingsDesktopSection extends HookConsumerWidget {
           value: preferences.systemTitleBar,
           onChanged: preferencesNotifier.setSystemTitleBar,
         ),
-        if (!DesktopTools.platform.isMacOS)
-          SwitchListTile(
-            secondary: const Icon(SpotubeIcons.discord),
-            title: Text(context.l10n.discord_rich_presence),
-            value: preferences.discordPresence,
-            onChanged: preferencesNotifier.setDiscordPresence,
-          ),
       ],
     );
   }

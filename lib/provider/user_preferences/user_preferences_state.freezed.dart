@@ -48,7 +48,6 @@ mixin _$UserPreferences {
   AudioSource get audioSource => throw _privateConstructorUsedError;
   SourceCodecs get streamMusicCodec => throw _privateConstructorUsedError;
   SourceCodecs get downloadMusicCodec => throw _privateConstructorUsedError;
-  bool get discordPresence => throw _privateConstructorUsedError;
   bool get endlessPlayback => throw _privateConstructorUsedError;
   bool get enableConnect => throw _privateConstructorUsedError;
 
@@ -93,7 +92,6 @@ abstract class $UserPreferencesCopyWith<$Res> {
       AudioSource audioSource,
       SourceCodecs streamMusicCodec,
       SourceCodecs downloadMusicCodec,
-      bool discordPresence,
       bool endlessPlayback,
       bool enableConnect});
 }
@@ -131,7 +129,6 @@ class _$UserPreferencesCopyWithImpl<$Res, $Val extends UserPreferences>
     Object? audioSource = null,
     Object? streamMusicCodec = null,
     Object? downloadMusicCodec = null,
-    Object? discordPresence = null,
     Object? endlessPlayback = null,
     Object? enableConnect = null,
   }) {
@@ -216,10 +213,6 @@ class _$UserPreferencesCopyWithImpl<$Res, $Val extends UserPreferences>
           ? _value.downloadMusicCodec
           : downloadMusicCodec // ignore: cast_nullable_to_non_nullable
               as SourceCodecs,
-      discordPresence: null == discordPresence
-          ? _value.discordPresence
-          : discordPresence // ignore: cast_nullable_to_non_nullable
-              as bool,
       endlessPlayback: null == endlessPlayback
           ? _value.endlessPlayback
           : endlessPlayback // ignore: cast_nullable_to_non_nullable

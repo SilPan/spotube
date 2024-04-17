@@ -1,5 +1,5 @@
 import 'package:catcher_2/catcher_2.dart';
-import 'package:dart_discord_rpc/dart_discord_rpc.dart';
+
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -67,10 +67,6 @@ Future<void> main(List<String> rawArgs) async {
 
   if (!kIsWeb) {
     MetadataGod.initialize();
-  }
-
-  if (DesktopTools.platform.isWindows || DesktopTools.platform.isLinux) {
-    DiscordRPC.initialize();
   }
 
   await KVStoreService.initialize();

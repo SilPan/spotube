@@ -19,7 +19,6 @@ import 'package:spotube/provider/user_preferences/user_preferences_provider.dart
 import 'package:spotube/provider/user_preferences/user_preferences_state.dart';
 import 'package:spotube/services/audio_player/audio_player.dart';
 import 'package:spotube/services/audio_services/audio_services.dart';
-import 'package:spotube/provider/discord_provider.dart';
 
 import 'package:spotube/utils/persisted_state_notifier.dart';
 
@@ -31,7 +30,6 @@ class ProxyPlaylistNotifier extends PersistedStateNotifier<ProxyPlaylist> {
   UserPreferences get preferences => ref.read(userPreferencesProvider);
   ProxyPlaylist get playlist => state;
   BlackListNotifier get blacklist => ref.read(blacklistProvider.notifier);
-  Discord get discord => ref.read(discordProvider);
 
   List<StreamSubscription> _subscriptions = [];
 
@@ -164,7 +162,6 @@ class ProxyPlaylistNotifier extends PersistedStateNotifier<ProxyPlaylist> {
   Future<void> stop() async {
     state = ProxyPlaylist({});
     await audioPlayer.stop();
-    discord.clear();
   }
 
   Future<void> updatePalette() async {
