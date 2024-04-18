@@ -1,8 +1,5 @@
 version: 2.1
 
-orbs:
-  gh: circleci/github-cli@2.2.0
-
 jobs:
   flutter_linux_arm:
     machine:
@@ -26,7 +23,6 @@ jobs:
         default: true
     steps:
       - checkout
-      - gh/setup
 
       - run:
           name: Get current date
@@ -133,39 +129,6 @@ jobs:
       - store_artifacts:
           path: Spotube-linux-aarch64.zip
 
-      - when:
-          condition:
-            and:
-              - equal: [<< parameters.dry_run >>, false]
-              - equal: [<< parameters.channel >>, release]
-          steps:
-            - run:
-                name: Upload to release (release)
-                command: gh release upload v<< parameters.version  >> bundle/* --clobber
-
-      - when:
-          condition:
-            and:
-              - equal: [<< parameters.dry_run >>, false]
-              - equal: [<< parameters.channel >>, nightly]
-          steps:
-            - run:
-                name: Upload to release (nightly)
-                command: gh release upload nightly bundle/* --clobber
-
-parameters:
-  GHA_Actor:
-    type: string
-    default: ""
-  GHA_Action:
-    type: string
-    default: ""
-  GHA_Event:
-    type: string
-    default: ""
-  GHA_Meta:
-    type: string
-    default: ""
 
 workflows:
   build_flutter_for_arm_workflow:
