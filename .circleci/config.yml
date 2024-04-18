@@ -78,6 +78,8 @@ jobs:
           name: Generate .env file
           command: |
             echo "SPOTIFY_SECRETS=${SPOTIFY_SECRETS}" >> .env
+            echo "LASTFM_API_KEY=${LASTFM_API_KEY}" >> .env
+            echo "LASTFM_API_SECRET=${LASTFM_API_SECRET}" >> .env
 
       - run:
           name: Replace Version in files
